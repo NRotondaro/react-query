@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import Character from './Character';
 
 export default function Characters() {
   const fetchCharacters = async () => {
@@ -17,9 +18,9 @@ export default function Characters() {
   }
 
   return (
-    <div>
+    <div className='characters'>
       {data.results.map((character) => (
-        <div key={character.id}>{character.name}</div>
+        <Character key={character.id} character={character} />
       ))}
     </div>
   );
